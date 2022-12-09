@@ -1,0 +1,247 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utility Components */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* List Items  */
+li {
+    list-style: none;
+  }
+  
+  /* Abchor Tags  */
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+  }
+  /*
+
+/*******************************Main Nav Header******************************************/
+
+header#header{
+    /* background-color: var(--primary-color);*/
+     height: calc(3vw + 3vh);
+     z-index: 2;
+     background-color: #000;
+   }
+   
+   nav#header__main-nav{
+     height: 100%;
+   
+   }
+   
+   ul.header__main-nav--links{
+     /*   just for demonstration */
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: end;
+     align-items: center;
+   
+   }
+   
+   ul.header__main-nav--links li{
+     padding-right: 3vw;
+   }
+   
+   ul.header__main-nav--links li a {
+   position: relative;
+   padding: 0.2rem 0.6rem ;
+   font-size: calc(1rem =+ 0.66667vw);
+   }
+   
+   ul.header__main-nav--links li:nth-child(6){
+    /*background-color:var(--secondary-color-s);*/
+    background-color: #79031D;
+     border-radius: 10rem;
+     cursor: pointer;
+     padding-left: 1.5rem;
+     padding-right: 1.5rem;
+     
+   }
+   /***    nav bar hover effect Psuedo  ELEMENT  ***/
+   
+   ul.header__main-nav--links li a:link::before,
+   ul.header__main-nav--links li a:visited::before,
+   ul.header__main-nav--links li a:link::after,
+   ul.header__main-nav--links li a:visited::after{
+     content: "";
+     position: absolute;
+     left:0;
+     width:100%;
+     height: 0.25rem;
+     background-color: #79031D;
+     transform: scaleX(0); /* this indicate that they are there but not showing*/
+     transition: transform 0.6s cubic-bezier(1, 0, 0, 1);
+   }
+   
+   ul.header__main-nav--links li a:link::before,
+   ul.header__main-nav--links li a:visited::before{
+     top:0;
+     /* Transform origin is center by Default */
+     transform-origin: left;
+   
+   }
+   
+   ul.header__main-nav--links li a:link::after,
+   ul.header__main-nav--links li a:visited::after{
+     bottom:0;
+     transform-origin: right;
+   }
+   
+   ul.header__main-nav--links li a:hover::before,
+   ul.header__main-nav--links li a:active::before,
+   ul.header__main-nav--links li a:hover::after,
+   ul.header__main-nav--links li a:active::after{
+   transform: scaleX(1); /* this make them scale*/
+   }
+   
+  
+/* Loading Container */
+ul.loading-effect {
+    margin-top: 20vh;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+  }
+  
+  ul.loading-effect li {
+    display: inline-block;
+    list-style: none;
+    letter-spacing: 2rem;
+    animation: loading 3s linear infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: translateX(-2rem);
+      letter-spacing: 2rem;
+      opacity: 0;
+      color: green;
+    }
+  
+    20% {
+      opacity: 1;
+      color: blueviolet;
+    }
+  
+    50% {
+      letter-spacing: -2rem;
+      opacity: 1;
+      color: yellowgreen;
+    }
+  
+    100% {
+      transform: translateX(2rem);
+      letter-spacing: 2rem;
+      opacity: 0;
+      color: blue;
+    }
+  }
+  
+  ul.loading-effect li:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  ul.loading-effect li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  ul.loading-effect li:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  ul.loading-effect li:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+  
+  ul.loading-effect li:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+  
+  ul.loading-effect li:nth-child(6) {
+    animation-delay: 1s;
+  }
+  
+  ul.loading-effect li:nth-child(7) {
+    animation-delay: 1.2s;
+  }
+
+  form {
+    width: 30rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20vh;
+    padding: 4rem;
+    background-image: linear-gradient(135deg, #feb692 10%, #ea5455 100%);
+    color: white;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* input container */
+  .input-container {
+    position: relative;
+  }
+  
+  /* input */
+  .input-container input,
+  input[type="submit"] {
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    border-bottom: 0.1rem rgb(223, 150, 55) solid;
+  }
+  
+  input[type="submit"] {
+    border: none;
+    background: rgb(223, 150, 55);
+  }
+  
+  .input-container input,
+  input[type="submit"],
+  .input-container label {
+    padding: 0.8rem;
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  /* label */
+  .input-container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: all 0.45s ease-in-out;
+  }
+  
+  /* Effect */
+  .input-container input:focus ~ label,
+  .input-container input:valid ~ label {
+    top: -1rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: black;
+  }
+  
